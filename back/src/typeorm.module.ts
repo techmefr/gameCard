@@ -1,6 +1,6 @@
 import { DataSource } from 'typeorm';
 import { Global, Module } from '@nestjs/common';
-import { dataSource } from '../config/database.datasource';
+import { dataSource } from './config/database.config';
 
 @Global() // makes the module available globally for other modules once imported in the app modules
 @Module({
@@ -15,7 +15,8 @@ import { dataSource } from '../config/database.datasource';
         try {
           await dataSource.initialize(); // initialize the data source
           return dataSource;
-        } catch (error) {
+        }
+        catch (error) {
           console.log('Error connecting to database');
           throw error;
         }
@@ -24,4 +25,4 @@ import { dataSource } from '../config/database.datasource';
   ],
   exports: [DataSource],
 })
-export class DatabaseModule {}
+export class TypeOrmModule {}

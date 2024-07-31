@@ -1,11 +1,10 @@
 {
-  "name": "back",
+  "name": "my-real-app",
   "version": "0.0.1",
   "description": "",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -14,7 +13,7 @@
     "migration:revert": "npm run typeorm migration:revert -d src/config/database.datasource.ts",
     "schema:sync": "npm run typeorm schema:sync -- -d src/config/database.datasource.ts",
     "migration:show": "npm run typeorm migration:show -- -d src/config/database.datasource.ts",
-    "migration:generate": "npm run typeorm migration:generate src/migration -- -d src/config/database.datasource.ts",
+    "migration:generate": "npm run typeorm migration:generate ./src/migration -- -d src/config/database.datasource.ts",
     "migration:create": "npm run typeorm migration:create",
     "start": "nest start",
     "start:dev": "nest start --watch",
